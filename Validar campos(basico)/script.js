@@ -40,7 +40,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
         document.getElementById('error-email').textContent = '*Campo requerido';
         document.getElementById('error-email').style.display = 'inline';
         isValid = false;
-    } else if (!email.validity.valid) {
+    } else if (!isValidEmail(emailValue)) {
         document.getElementById('error-email').textContent = '*Correo electrónico inválido';
         document.getElementById('error-email').style.display = 'inline';
         isValid = false;
@@ -54,3 +54,9 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     }
 
 });
+
+function isValidEmail(email) {
+    // Expresion estandar para validar el correo por el @ que no tenga espacion entre uno y el otro y tambien por el '.' que debe tener un contendio despues del punto ejem: aada@adad.com
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}

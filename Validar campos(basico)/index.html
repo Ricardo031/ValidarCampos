@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar y verificar</title>
+</head>
+<body>
+    <main>
+        <section>
+            <form id="formulario">
+                <label for="cedula">DIGITE SU CÉDULA</label>
+                <input type="text" id="cedula" name="cedula">
+                <!-- min="0" step="1" solo si colocaria type number pero nah -->
+                <span id="error-cedula" style="color: red; display: none;">*Campo requerido</span>
+              
+                <br>
+              
+                <label for="nombre">DIGITE SU NOMBRE</label>
+                <input type="text" id="nombre" name="nombre">
+                <span id="error-nombre" style="color: red; display: none;">*Campo requerido</span>
+              
+                <br>
+                
+                <label for="email">DIGITE SU CORREO ELECTRÓNICO</label>
+                <input type="email" id="email" name="email">
+                <span id="error-email" style="color: red; display: none;">*Correo electrónico inválido</span>
+                <br>
+                <button type="submit" name="guardar">Guardar</button>
+            </form>
+          
+            <div class="row"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

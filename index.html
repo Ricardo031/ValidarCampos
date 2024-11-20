@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Validar y verificar</title>
+</head>
+
+<body>
+    <main>
+        <section class="Login">
+            <!-- el novalidate desactiva la validación automática del navegador -->
+            <form id="formulario" novalidate>
+                <h2 class="form__title">Inicia Sesión</h2>
+
+                <section class="Usuario">
+                    <div class="groud">
+                        <label class="label" for="nombre">Nombre <span class="obli">*</span></label>
+                        <input type="text" class="input input__nombre" id="nombre" name="nombre" placeholder="">
+                        <span class="error" id="error-nombre">*Campo requerido</span>
+                    </div>
+
+                    <div class="groud">
+                        <label class="label" for="apellido">Apellido <span class="obli">*</span></label>
+                        <input type="text" class="input input__apelli" id="apellido" name="apellido" placeholder="">
+                        <span class="error" id="error-apellido">*Campo requerido</span>
+                    </div>
+                </section>
+
+                <div class="groud">
+                    <label class="label" for="email">Email <span class="obli">*</span></label>
+                    <input type="email" class="input" id="email" name="email" placeholder="">
+                    <span class="error" id="error-email">*Correo electrónico inválido</span>
+                </div>
+
+                <!--todo Contraseña -->
+                <div class="groud">
+                    <label class="label" for="contra">Contraseña<span class="obli">*</span></label>
+                    <div class="contraseña">
+                        <input type="password" class="input" id="contra" name="contra" placeholder="">
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">
+                            <img src="icons/View.svg" class="contra__img">
+                        </button>
+                    </div>
+                    <span class="error" id="error-contra">*Campo requerido</span>
+                </div>
+
+                <div class="groud">
+                    <label class="label" for="edad">Edad <span class="obli">*</span></label>
+                    <input type="number" class="input input-edad" id="edad" name="edad" placeholder="">
+                    <span class="error" id="error-edad">*Campo requerido</span>
+                </div>
+
+                <!--todo Sex -->
+                <div class="sexo">
+                    <label class="label-sex">Seleccione su Sexo <span class="obli">*</span></label>
+                    <button class="button-sex masculino" type="button" onclick="selectSex(this)">
+                        <img src="icons/user-M.svg" class="icon-sex" alt="Masculino">
+                        <p class="description">Hombre</p>
+                    </button>
+                    <button class="button-sex femenino" type="button" onclick="selectSex(this)">
+                        <img src="icons/user-F.svg" class="icon-sex" alt="Femenino">
+                        <p class="description">Mujer</p>
+                    </button>
+                    <button class="button-sex binario" type="button" onclick="selectSex(this)">
+                        <img src="icons/Logo-fantasma.svg" class="icon-sex" alt="No Binario">
+                        <p class="description">No Binario/Otro</p>
+                    </button>
+                    <!-- Mensaje de error -->
+                    <span class="error" id="error-sexo">*Campo requerido</span>
+                </div>
+
+                <section class="inputes">
+                    <button class="button" type="submit" name="guardar">Guardar</button>
+                    <button class="button button-white" type="reset" name="reset">Reset</button>
+                </section>
+            </form>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
